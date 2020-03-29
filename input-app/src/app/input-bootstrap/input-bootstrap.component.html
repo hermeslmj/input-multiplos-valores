@@ -1,0 +1,17 @@
+<div class="input-group mb-3">
+    <input class="form-group" type="text" class="form-control" [readonly]="!!isReadOnly" [(ngModel)]="value" [name]="name" [placeholder]="placeholder" somenteNumeros/> 
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="appendMultipleValue()">+</button>
+    </div>
+</div>
+
+
+<div *ngIf="multipleValue.length > 0">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let v of multipleValue">
+            <span class="name">{{ v }}</span>
+            <button class="btn btn-primmary btn-xs" (click)="removeMultipleValue(v)"> X</button>
+        </li>
+      </ul>
+</div>
+
